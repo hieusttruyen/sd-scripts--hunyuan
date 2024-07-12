@@ -91,6 +91,7 @@ class DreamBoothSubsetParams(BaseSubsetParams):
 @dataclass
 class FineTuningSubsetParams(BaseSubsetParams):
     metadata_file: Optional[str] = None
+    alphal_mask: bool = False
 
 
 @dataclass
