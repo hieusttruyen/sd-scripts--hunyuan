@@ -85,7 +85,9 @@ class DreamBoothSubsetParams(BaseSubsetParams):
     is_reg: bool = False
     class_tokens: Optional[str] = None
     caption_extension: str = ".caption"
-    cache_info: bool = False
+    cache_info: bool = False,
+    alpha_mask: bool = False
+
 
 
 @dataclass

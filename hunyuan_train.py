@@ -525,9 +525,10 @@ def train(args):
         )
 
     # For --sample_at_first
-    sdxl_train_util.sample_images(
-        accelerator, args, 0, global_step, accelerator.device, vae, [tokenizer1, tokenizer2], [text_encoder1, text_encoder2], hydit
-    )
+    print(" sample_images not yet")
+    # sdxl_train_util.sample_images(
+    #     accelerator, args, 0, global_step, accelerator.device, vae, [tokenizer1, tokenizer2], [text_encoder1, text_encoder2], hydit
+    # )
 
     loss_recorder = train_util.LossRecorder()
     for epoch in range(num_train_epochs):
@@ -685,17 +686,20 @@ def train(args):
                 progress_bar.update(1)
                 global_step += 1
 
-                sdxl_train_util.sample_images(
-                    accelerator,
-                    args,
-                    None,
-                    global_step,
-                    accelerator.device,
-                    vae,
-                    [tokenizer1, tokenizer2],
-                    [text_encoder1, text_encoder2],
-                    hydit,
-                )
+
+                print(" sample_images not yet")
+
+                # sdxl_train_util.sample_images(
+                #     accelerator,
+                #     args,
+                #     None,
+                #     global_step,
+                #     accelerator.device,
+                #     vae,
+                #     [tokenizer1, tokenizer2],
+                #     [text_encoder1, text_encoder2],
+                #     hydit,
+                # )
 
                 # 指定ステップごとにモデルを保存
                 if args.save_every_n_steps is not None and global_step % args.save_every_n_steps == 0:
@@ -769,17 +773,19 @@ def train(args):
                     hydit_version,
                 )
 
-        sdxl_train_util.sample_images(
-            accelerator,
-            args,
-            epoch + 1,
-            global_step,
-            accelerator.device,
-            vae,
-            [tokenizer1, tokenizer2],
-            [text_encoder1, text_encoder2],
-            hydit,
-            )
+
+        print(" sample_images not yet")
+        # sdxl_train_util.sample_images(
+        #     accelerator,
+        #     args,
+        #     epoch + 1,
+        #     global_step,
+        #     accelerator.device,
+        #     vae,
+        #     [tokenizer1, tokenizer2],
+        #     [text_encoder1, text_encoder2],
+        #     hydit,
+        #     )
 
     is_main_process = accelerator.is_main_process
     # if is_main_process:
